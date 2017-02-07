@@ -1,0 +1,4 @@
+-libraryjars /home/mikeh/sun_java/WTK2.5.2/lib/midpapi20.jar:/home/mikeh/sun_java/WTK2.5.2/lib/wma11.jar:/home/mikeh/sun_java/WTK2.5.2/lib/cldcapi11.jar
+-injars /home/mikeh/j2mewtk/2.5.2/apps/FPDemo/bin/FPDemo.jar
+-outjar /tmp/FPDemo.jar
+-keep public class * extends javax.microedition.midlet.MIDlet 
