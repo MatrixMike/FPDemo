@@ -1,7 +1,7 @@
 MIDlet-1: Calculator, calculator.png, calculator.CalculatorMIDlet
-MIDlet-Description: Floating Point demonstration MIDlet
+MIDlet-Description: Kinematics demo
 MIDlet-Name: FPDemo
-MIDlet-Vendor: Sun Microsystems, Inc.
-MIDlet-Version: 1.0
+MIDlet-Vendor: Hewitt Enterprises
+MIDlet-Version: 1.1
 MicroEdition-Configuration: CLDC-1.1
 MicroEdition-Profile: MIDP-2.0

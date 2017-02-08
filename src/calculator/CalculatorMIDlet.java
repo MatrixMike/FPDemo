@@ -22,6 +22,7 @@ package calculator;
 
 import javax.microedition.lcdui.*;
 import javax.microedition.midlet.MIDlet;
+// import java.util.Properties;
 
 
 /**
@@ -41,16 +42,19 @@ public final class CalculatorMIDlet extends MIDlet implements CommandListener {
     private final Command calcCmd = new Command("Calc", Command.SCREEN, 1);
 
     /** A text field to keep the first argument. */
-    private final TextField t1 = new TextField(null, "", NUM_SIZE, TextField.DECIMAL);// "time"
+    private final TextField t1 = new TextField(null, "", NUM_SIZE, TextField.NUMERIC);// "t time"
+      //      System.getProperty("user.name");
 
     /** A text field to keep the second argument. */
-    private final TextField t2 = new TextField(null, "", NUM_SIZE, TextField.DECIMAL);// "initial velocity"
-        /** A text field to keep the second argument. */
-    private final TextField t3 = new TextField(null, "", NUM_SIZE, TextField.DECIMAL);// "acceleration"
-
+    private final TextField t2 = new TextField(null, "", NUM_SIZE, TextField.NUMERIC);// "u initial velocity"
+    /** A text field to keep the second argument. */
+    private final TextField t3 = new TextField(null, "", NUM_SIZE, TextField.NUMERIC);// "a acceleration"
+    private final TextField t4 = new TextField(null, "", NUM_SIZE, TextField.DECIMAL);// "v velocity at time t"
     /** A text field to keep the result of calculation. */
-    private final TextField tr = new TextField("Displacement s=", "", NUM_SIZE, TextField.UNEDITABLE); // "s=" 
-
+    private final TextField tr = new TextField("Displacement s ", "", NUM_SIZE, TextField.UNEDITABLE); // "s=" 
+    private final TextField v  = new TextField("velocity at time t ", "", NUM_SIZE, TextField.UNEDITABLE); // "v=" 
+      private final TextField sysprop  = new TextField(System.getProperty("java.vm.vendor"), "", NUM_SIZE, TextField.UNEDITABLE); // "v="   
+      private final TextField texttest  = new TextField("xxx", "", NUM_SIZE, TextField.UNEDITABLE); // "v="   
     /** A choice group with available operations. */
     private final ChoiceGroup cg =
         new ChoiceGroup("", ChoiceGroup.POPUP,
@@ -70,17 +74,20 @@ public final class CalculatorMIDlet extends MIDlet implements CommandListener {
             return;
         }
   //    private Date ;
-        Form f = new Form("FP Calculator 2");
+        Form f = new Form("Kinematics 1");
         DateField date2 = new DateField("Date3", DateField.DATE);
         f.append(t1); // time
         f.append(cg); 
         f.append(t2); // init velocity
         f.append(t3); // acceleration
         f.append(tr); // displacement
+        f.append(v);  // velocity at time t
+        f.append(sysprop);
+        f.append(texttest);
         f.addCommand(exitCmd);
-        f.addCommand(calcCmd);
-       f.append(new DateField("Date1", DateField.DATE));  // 07.02.2017
-     f.append(date2);  // f.append(new DateField("Date2", DateField.DATE)); //
+		f.addCommand(calcCmd);
+		f.append(new DateField("Date1", DateField.DATE));  // 07.02.2017
+		f.append(date2);  // f.append(new DateField("Date2", DateField.DATE)); //
        // to retrieve date values - maybe assign 
       // DateField date = 
   //    Date currentTime = date2.getDate();
@@ -122,6 +129,8 @@ public final class CalculatorMIDlet extends MIDlet implements CommandListener {
             double n1 = getNumber(t1, "time");
             double n2 = getNumber(t2, "initial velocity");
             double n3 = getNumber(t3, "acceleration");
+            double vs;
+            String  svs ;
 
             switch (cg.getSelectedIndex()) {
             case 0:
@@ -143,6 +152,10 @@ public final class CalculatorMIDlet extends MIDlet implements CommandListener {
             case 4:
                 res = n2*n1 + ((n1*n1)*n3)/2; // was n1/n2  // n1 / n2; // res = u*t + ((t*t)*a)/2  //
 //  cpp s = u * t + ((t * t) * a) / 2;
+				//double
+				 vs = Math.sin(2.5); 
+				 svs = Double.toString(vs);
+				 texttest.setString(svs);
                 break;
             default:
             }
