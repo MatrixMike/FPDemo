@@ -51,7 +51,7 @@ public final class CalculatorMIDlet extends MIDlet implements CommandListener {
     private final TextField t3 = new TextField(null, "", NUM_SIZE, TextField.NUMERIC);// "a acceleration"
     private final TextField t4 = new TextField(null, "", NUM_SIZE, TextField.DECIMAL);// "v velocity at time t"
     /** A text field to keep the result of calculation. */
-    private final TextField tr = new TextField("Displacement s ", "", NUM_SIZE, TextField.UNEDITABLE); // "s=" 
+    private final TextField tr = new TextField("displacement s ", "", NUM_SIZE, TextField.UNEDITABLE); // "s=" 
     private final TextField v  = new TextField("velocity at time t ", "", NUM_SIZE, TextField.UNEDITABLE); // "v=" 
       private final TextField sysprop  = new TextField(System.getProperty("microedition.configuration"), "", NUM_SIZE, TextField.UNEDITABLE); // "v="   
       private final TextField texttest  = new TextField("xxx", "", NUM_SIZE, TextField.UNEDITABLE); // "v="   
@@ -153,9 +153,11 @@ public final class CalculatorMIDlet extends MIDlet implements CommandListener {
                 res = n2*n1 + ((n1*n1)*n3)/2; // was n1/n2  // n1 / n2; // res = u*t + ((t*t)*a)/2  //
 //  cpp s = u * t + ((t * t) * a) / 2;
 				//double
-				 vs = Math.sqrt(2.5); 
+				 vs = Math.sqrt((n2*n2)+(2*n3*res));  // v2 = u2 + 2as :
+				 // vs = Math.sqrt(2.5); 
 				 svs = Double.toString(vs);
-				 texttest.setString(svs);
+				texttest.setString(svs);
+				v.setString(svs);
                 break;
             default:
             }
@@ -164,10 +166,8 @@ public final class CalculatorMIDlet extends MIDlet implements CommandListener {
         } catch (ArithmeticException e) {
             alert.setString("Divide by zero.");
             Display.getDisplay(this).setCurrent(alert);
-
             return;
         }
-
         /*
          * The resulted string may exceed the text max size.
          * We need to correct last one then.
