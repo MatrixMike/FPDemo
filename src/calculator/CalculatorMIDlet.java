@@ -153,7 +153,7 @@ public final class CalculatorMIDlet extends MIDlet implements CommandListener {
                 res = n2*n1 + ((n1*n1)*n3)/2; // was n1/n2  // n1 / n2; // res = u*t + ((t*t)*a)/2  //
 //  cpp s = u * t + ((t * t) * a) / 2;
 				//double
-				 vs = Math.sin(2.5); 
+				 vs = Math.sqrt(2.5); 
 				 svs = Double.toString(vs);
 				 texttest.setString(svs);
                 break;
