@@ -53,7 +53,7 @@ public final class CalculatorMIDlet extends MIDlet implements CommandListener {
     /** A text field to keep the result of calculation. */
     private final TextField tr = new TextField("Displacement s ", "", NUM_SIZE, TextField.UNEDITABLE); // "s=" 
     private final TextField v  = new TextField("velocity at time t ", "", NUM_SIZE, TextField.UNEDITABLE); // "v=" 
-      private final TextField sysprop  = new TextField(System.getProperty("java.vm.vendor"), "", NUM_SIZE, TextField.UNEDITABLE); // "v="   
+      private final TextField sysprop  = new TextField(System.getProperty("microedition.configuration"), "", NUM_SIZE, TextField.UNEDITABLE); // "v="   
       private final TextField texttest  = new TextField("xxx", "", NUM_SIZE, TextField.UNEDITABLE); // "v="   
     /** A choice group with available operations. */
     private final ChoiceGroup cg =
