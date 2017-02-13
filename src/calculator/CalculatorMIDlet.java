@@ -22,6 +22,7 @@ package calculator;
 
 import javax.microedition.lcdui.*;
 import javax.microedition.midlet.MIDlet;
+// import java.text.SimpleDateFormat;
 // import java.util.Properties;
 
 /**
@@ -30,6 +31,10 @@ import javax.microedition.midlet.MIDlet;
  *
  * @version
  */
+
+ 
+ 
+ 
 public final class CalculatorMIDlet extends MIDlet implements CommandListener {
     /** The number of characters in numeric text field. */
     private static final int NUM_SIZE = 20;
@@ -150,6 +155,7 @@ public final class CalculatorMIDlet extends MIDlet implements CommandListener {
                 break;
                 case 4:
                 res = n2*n1 + ((n1*n1)*n3)/2; // was n1/n2  // n1 / n2; // res = u*t + ((t*t)*a)/2  //
+                res = calculations(n1,n2,n3);
                 //  cpp s = u * t + ((t * t) * a) / 2;
                 //double
                 vs = Math.sqrt((n2*n2)+(2*n3*res));  // v2 = u2 + 2as :
@@ -209,4 +215,17 @@ public final class CalculatorMIDlet extends MIDlet implements CommandListener {
 
         return n;
     }
+    
+      public static double calculations(double n1,double n2,double n3) {
+		  double res;
+	    res = n2*n1 + ((n1*n1)*n3)/2; // was n1/n2  // n1 / n2; // res = u*t + ((t*t)*a)/2  //
+                //  cpp s = u * t + ((t * t) * a) / 2;
+                //double
+                return res;
+	 }
+    
 } // end of class 'CalculatorMIDlet' definition
+
+ 
+
+	 
