@@ -20,6 +20,7 @@
  */
 package calculator;
 import java.util.*;
+import java.lang.*;
 import javax.microedition.lcdui.*;
 import javax.microedition.midlet.MIDlet;
 // import java.util.List;
@@ -33,7 +34,17 @@ import javax.microedition.midlet.MIDlet;
  *
  * @version
  */
+ /* String buffers are used by the compiler to implement the binary string concatenation operator +. For example, the code:
 
+         x = "a" + 4 + "c"
+     
+
+is compiled to the equivalent of:
+
+         x = new StringBuffer().append("a").append(4).append("c")
+                               .toString()
+                               */
+     
  
  
  
@@ -60,7 +71,7 @@ public final class CalculatorMIDlet extends MIDlet implements CommandListener {
     private final TextField tr = new TextField("displacement s ", "", NUM_SIZE, TextField.UNEDITABLE); // "s=" 
     private final TextField v  = new TextField("velocity at time t ", "", NUM_SIZE, TextField.UNEDITABLE); // "v=" 
     private final TextField sysprop  = new TextField(System.getProperty("microedition.configuration"), "", NUM_SIZE, TextField.UNEDITABLE); // "v="   
-    private final TextField texttest  = new TextField("xxx", "", NUM_SIZE, TextField.UNEDITABLE); // "v="   
+    private final TextField texttest  = new TextField("xxx ", "", NUM_SIZE, TextField.UNEDITABLE); // "v="   
     /** A choice group with available operations. */
     private final ChoiceGroup cg =
         new ChoiceGroup("", ChoiceGroup.POPUP,
@@ -79,7 +90,13 @@ public final class CalculatorMIDlet extends MIDlet implements CommandListener {
         if (isInitialized) {
             return;
         }
-long aboutNow = date.getTime();
+        long aboutNow = date.getTime();
+        Calendar calendar = Calendar.getInstance();
+
+		int DOM = calendar.get(Calendar.DAY_OF_MONTH);
+// in this library appear not to be able to do DAY_OF_WEEK_IN_MONTH but maybe 
+		if   ( (calendar.get(Calendar.DAY_OF_MONTH)==4) && (calendar.get(Calendar.DAY_OF_WEEK)==2) ){}
+	 
         Form f = new Form("Kinematics 1");
         DateField date2 = new DateField("Date3", DateField.DATE);
         f.append(t1); // time
