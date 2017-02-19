@@ -1,7 +1,9 @@
 MIDlet-1: Calculator, calculator.png, calculator.CalculatorMIDlet
 MIDlet-Description: Kinematics demo
+MIDlet-Icon: android_small.png
+MIDlet-Info-URL: http://electroteach.com/midlets/
 MIDlet-Name: FPDemo
 MIDlet-Vendor: Hewitt Enterprises
-MIDlet-Version: 1.2
+MIDlet-Version: 1.3
 MicroEdition-Configuration: CLDC-1.1
 MicroEdition-Profile: MIDP-2.0

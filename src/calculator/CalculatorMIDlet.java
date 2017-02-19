@@ -19,9 +19,11 @@
  *
  */
 package calculator;
-
+import java.util.*;
 import javax.microedition.lcdui.*;
 import javax.microedition.midlet.MIDlet;
+// import java.util.List;
+
 // import java.text.SimpleDateFormat;
 // import java.util.Properties;
 
@@ -69,7 +71,7 @@ public final class CalculatorMIDlet extends MIDlet implements CommandListener {
 
     /** Indicates if the application is initialized. */
     private boolean isInitialized = false;
-
+            private Date date ;
     /**
      * Creates the calculator view and action buttons.
      */
@@ -77,7 +79,7 @@ public final class CalculatorMIDlet extends MIDlet implements CommandListener {
         if (isInitialized) {
             return;
         }
-        //    private Date ;
+long aboutNow = date.getTime();
         Form f = new Form("Kinematics 1");
         DateField date2 = new DateField("Date3", DateField.DATE);
         f.append(t1); // time

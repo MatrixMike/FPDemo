@@ -1,4 +1,4 @@
--libraryjars /home/mikeh/lib/mmapi.jar:/home/mikeh/lib/midpapi20.jar:/home/mikeh/lib/wma11.jar:/home/mikeh/lib/cldcapi11.jar
+-libraryjars /usr/local/lib/mmapi.jar:/usr/local/lib/midpapi20.jar:/usr/local/lib/wma11.jar:/usr/local/lib/cldcapi11.jar
 -injars /home/mikeh/j2mewtk/2.5.2/apps/FPDemo/bin/FPDemo.jar
 -outjar /tmp/FPDemo.jar
 -keep public class * extends javax.microedition.midlet.MIDlet 

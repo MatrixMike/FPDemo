@@ -29,7 +29,8 @@ mkdir -p ../tmpclasses
 mkdir -p ../classes
 
 echo "Compiling source files..."
-
+$(JAVAC} -version 
+echo "Hi Mike"
 ${JAVAC} \
     -bootclasspath ${CLDCAPI}${PATHSEP}${MIDPAPI} \
     -source 1.3 \
