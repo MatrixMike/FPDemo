@@ -1,28 +1,13 @@
 /*
  *
- * Copyright (c) 2007, Sun Microsystems, Inc.
- *
- * All rights reserved.
- *
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions
- * are met:
- *
- *  * Redistributions of source code must retain the above copyright
- *    notice, this list of conditions and the following disclaimer.
- *  * Redistributions in binary form must reproduce the above copyright
- *    notice, this list of conditions and the following disclaimer in the
- *    documentation and/or other materials provided with the distribution.
- *  * Neither the name of Sun Microsystems nor the names of its contributors
- *    may be used to endorse or promote products derived from this software
- *    without specific prior written permission.
  *
  */
 package calculator;
-import java.util.*;
-import java.lang.*;
+// import java.util.*;  // using this causes 'invalid application' error on the device
+// import java.lang.*;  // removed due to error on phone screen
 import javax.microedition.lcdui.*;
 import javax.microedition.midlet.MIDlet;
+import java.util.Date;
 // import java.util.List;
 
 // import java.text.SimpleDateFormat;
@@ -49,6 +34,7 @@ is compiled to the equivalent of:
  
  
 public final class CalculatorMIDlet extends MIDlet implements CommandListener {
+	private Date today = new Date(System.currentTimeMillis());
     /** The number of characters in numeric text field. */
     private static final int NUM_SIZE = 20;
 
@@ -82,7 +68,11 @@ public final class CalculatorMIDlet extends MIDlet implements CommandListener {
 
     /** Indicates if the application is initialized. */
     private boolean isInitialized = false;
-            private Date date ;
+//            private Date date ;
+            
+ //       long aboutNow = date.getTime();
+ //       Calendar calendar = Calendar.getInstance();  // removed due to error on device
+ //       double DOM = calendar.get(Calendar.DAY_OF_MONTH);
     /**
      * Creates the calculator view and action buttons.
      */
@@ -90,14 +80,15 @@ public final class CalculatorMIDlet extends MIDlet implements CommandListener {
         if (isInitialized) {
             return;
         }
-        long aboutNow = date.getTime();
-        Calendar calendar = Calendar.getInstance();
+ //       long aboutNow = date.getTime();
+//        Calendar calendar = Calendar.getInstance();
+//        double DOM = calendar.get(Calendar.DAY_OF_MONTH);
 
-		int DOM = calendar.get(Calendar.DAY_OF_MONTH);
+//		int DOM = calendar.get(Calendar.DAY_OF_MONTH);
 // in this library appear not to be able to do DAY_OF_WEEK_IN_MONTH but maybe 
-		if   ( (calendar.get(Calendar.DAY_OF_MONTH)==4) && (calendar.get(Calendar.DAY_OF_WEEK)==2) ){}
+//		if   ( (calendar.get(Calendar.DAY_OF_MONTH)==4) && (calendar.get(Calendar.DAY_OF_WEEK)==2) ){}
 	 
-        Form f = new Form("Kinematics 1");
+        Form f = new Form("Kinematics 2");
         DateField date2 = new DateField("Date3", DateField.DATE);
         f.append(t1); // time
         f.append(cg); 
@@ -113,7 +104,7 @@ public final class CalculatorMIDlet extends MIDlet implements CommandListener {
         f.append(date2);  // f.append(new DateField("Date2", DateField.DATE)); //
         // to retrieve date values - maybe assign 
         // DateField date = 
-        //    Date currentTime = date2.getDate();
+            Date currentTime = date2.getDate();
         f.setCommandListener(this);
         Display.getDisplay(this).setCurrent(f);
         alert.addCommand(new Command("Back", Command.SCREEN, 1));
@@ -180,6 +171,7 @@ public final class CalculatorMIDlet extends MIDlet implements CommandListener {
                 vs = Math.sqrt((n2*n2)+(2*n3*res));  // v2 = u2 + 2as :
                 // vs = Math.sqrt(2.5); 
                 svs = Double.toString(vs);
+      //           svs += Double.toString(DOM);
                 texttest.setString(svs);
                 v.setString(svs);
                 break;
