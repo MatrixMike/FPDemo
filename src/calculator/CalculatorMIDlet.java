@@ -5,9 +5,10 @@
 package calculator;
 // import java.util.*;  // using this causes 'invalid application' error on the device
 // import java.lang.*;  // removed due to error on phone screen
+import java.util.Date;
 import javax.microedition.lcdui.*;
 import javax.microedition.midlet.MIDlet;
-import java.util.Date;
+
 // import java.util.List;
 
 // import java.text.SimpleDateFormat;
@@ -30,8 +31,37 @@ is compiled to the equivalent of:
                                .toString()
                                */
      
- 
- 
+ class LongestCommonSubsequence {
+     // Compute length of LCS for all subproblems.
+    public static String lcs(String x, String y) {
+        int m = x.length(), n = y.length();
+        int[][] opt = new int[m+1][n+1];
+        for (int i = m-1; i >= 0; i--) {
+            for (int j = n-1; j >= 0; j--) {
+                if (x.charAt(i) == y.charAt(j)) {
+                    opt[i][j] = opt[i+1][j+1] + 1;
+                }
+                else {
+                    opt[i][j] = Math.max(opt[i+1][j], opt[i][j+1]);
+                }
+            }
+        }
+
+        // Recover LCS itself.
+        String lcs = "";
+        int i = 0, j = 0;
+        while (i < m && j < n) {
+            if (x.charAt(i) == y.charAt(j)) {
+                lcs += x.charAt(i);
+                i++;
+                j++;
+            }
+            else if (opt[i+1][j] >= opt[i][j+1]) i++;
+            else                                 j++;
+        }
+        return lcs;
+    }
+}
  
 public final class CalculatorMIDlet extends MIDlet implements CommandListener {
 	private Date today = new Date(System.currentTimeMillis());
@@ -76,6 +106,7 @@ public final class CalculatorMIDlet extends MIDlet implements CommandListener {
     /**
      * Creates the calculator view and action buttons.
      */
+
     protected void startApp() {
         if (isInitialized) {
             return;
@@ -87,9 +118,9 @@ public final class CalculatorMIDlet extends MIDlet implements CommandListener {
 //		int DOM = calendar.get(Calendar.DAY_OF_MONTH);
 // in this library appear not to be able to do DAY_OF_WEEK_IN_MONTH but maybe 
 //		if   ( (calendar.get(Calendar.DAY_OF_MONTH)==4) && (calendar.get(Calendar.DAY_OF_WEEK)==2) ){}
-	 
+//	         DateField datefield = new DateField("", DateField.DATE.TIME); 
         Form f = new Form("Kinematics 2");
-        DateField date2 = new DateField("Date3", DateField.DATE);
+
         f.append(t1); // time
         f.append(cg); 
         f.append(t2); // init velocity
@@ -100,11 +131,21 @@ public final class CalculatorMIDlet extends MIDlet implements CommandListener {
         f.append(texttest);
         f.addCommand(exitCmd);
         f.addCommand(calcCmd);
+        
+// 1          display = Display.getDisplay(this);
+
+ //   datefield.setDate(today);
+ // 1   form.append(datefield);
+ // 1   form.addCommand(exit);
+ // 1   form.setCommandListener(this);
+    
         f.append(new DateField("Date1", DateField.DATE));  // 07.02.2017
-        f.append(date2);  // f.append(new DateField("Date2", DateField.DATE)); //
+  // 1          date2.setDate(today);
+//        f.append(datefield);  // f.append(new DateField("Date2", DateField.DATE)); //
         // to retrieve date values - maybe assign 
         // DateField date = 
-            Date currentTime = date2.getDate();
+ //           Date currentTime = datefield.getDate();
+         String	lcs = LongestCommonSubsequence.lcs("tania", "tonight");
         f.setCommandListener(this);
         Display.getDisplay(this).setCurrent(f);
         alert.addCommand(new Command("Back", Command.SCREEN, 1));

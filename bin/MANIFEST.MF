@@ -4,6 +4,6 @@ MIDlet-Icon: android_small.png
 MIDlet-Info-URL: http://electroteach.com/midlets/
 MIDlet-Name: FPDemo
 MIDlet-Vendor: Hewitt Enterprises
-MIDlet-Version: 1.4
+MIDlet-Version: 1.5
 MicroEdition-Configuration: CLDC-1.1
 MicroEdition-Profile: MIDP-2.0
