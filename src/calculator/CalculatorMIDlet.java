@@ -88,7 +88,13 @@ public final class CalculatorMIDlet extends MIDlet implements CommandListener {
     private final TextField v  = new TextField("velocity at time t ", "", NUM_SIZE, TextField.UNEDITABLE); // "v=" 
     private final TextField sysprop  = new TextField(System.getProperty("microedition.configuration"), "", NUM_SIZE, TextField.UNEDITABLE); // "v="   
     private final TextField texttest  = new TextField("xxx ", "", NUM_SIZE, TextField.UNEDITABLE); // "v="   
-    /** A choice group with available operations. */
+// here for the 3 strings to support lcs
+   
+    private final TextField lcs_in1 = new TextField("lcsIN1", "", NUM_SIZE, TextField.DECIMAL);//  
+    private final TextField lcs_in2 = new TextField("lcsIN2", "", NUM_SIZE, TextField.DECIMAL);//  
+    private final TextField lcs_out  = new TextField("lcsOUT", "", NUM_SIZE, TextField.UNEDITABLE); // "v="    
+    
+    /** A choice group with ava1ailable operations. */
     private final ChoiceGroup cg =
         new ChoiceGroup("", ChoiceGroup.POPUP,
             new String[] { "add", "subtract", "multiply", "divide", "displacement" }, null);
@@ -213,8 +219,10 @@ public final class CalculatorMIDlet extends MIDlet implements CommandListener {
                 // vs = Math.sqrt(2.5); 
                 svs = Double.toString(vs);
       //           svs += Double.toString(DOM);
+      String lcs = LongestCommonSubsequence.lcs("tania", "tonight");
+             lcs = LongestCommonSubsequence.lcs(lcs_in1.getString(), lcs_in2.getString());   // s= lcs_in1.getString();
                 texttest.setString(svs);
-                v.setString(svs);
+                lcs_out.setString(lcs);
                 break;
                 default:
             }
