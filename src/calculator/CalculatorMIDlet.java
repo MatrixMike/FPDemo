@@ -125,7 +125,7 @@ public final class CalculatorMIDlet extends MIDlet implements CommandListener {
 // in this library appear not to be able to do DAY_OF_WEEK_IN_MONTH but maybe 
 //		if   ( (calendar.get(Calendar.DAY_OF_MONTH)==4) && (calendar.get(Calendar.DAY_OF_WEEK)==2) ){}
 //	         DateField datefield = new DateField("", DateField.DATE.TIME); 
-        Form f = new Form("Kinematics 2");
+        Form f = new Form("Kinematics 3");
 
 		f.append(lcs_in1);
 	
