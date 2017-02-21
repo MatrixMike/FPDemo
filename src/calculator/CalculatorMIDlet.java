@@ -21,19 +21,17 @@ import javax.microedition.midlet.MIDlet;
  *
  * @version
  */
- /* String buffers are used by the compiler to implement the binary string concatenation operator +. For example, the code:
+/* String buffers are used by the compiler to implement the binary string concatenation operator +. For example, the code:
 
-         x = "a" + 4 + "c"
-     
+x = "a" + 4 + "c"
 
 is compiled to the equivalent of:
+x = new StringBuffer().append("a").append(4).append("c")
+.toString()
+ */
 
-         x = new StringBuffer().append("a").append(4).append("c")
-                               .toString()
-                               */
-     
- class LongestCommonSubsequence {
-     // Compute length of LCS for all subproblems.
+class LongestCommonSubsequence {
+    // Compute length of LCS for all subproblems.
     public static String lcs(String x, String y) {
         int m = x.length(), n = y.length();
         int[][] opt = new int[m+1][n+1];
@@ -63,9 +61,9 @@ is compiled to the equivalent of:
         return lcs;
     }
 }
- 
+
 public final class CalculatorMIDlet extends MIDlet implements CommandListener {
-	private Date today = new Date(System.currentTimeMillis());
+    private Date today = new Date(System.currentTimeMillis());
     /** The number of characters in numeric text field. */
     private static final int NUM_SIZE = 20;
 
@@ -89,12 +87,12 @@ public final class CalculatorMIDlet extends MIDlet implements CommandListener {
     private final TextField v  = new TextField("velocity at time t ", "", NUM_SIZE, TextField.UNEDITABLE); // "v=" 
     private final TextField sysprop  = new TextField(System.getProperty("microedition.configuration"), "", NUM_SIZE, TextField.UNEDITABLE); // "v="   
     private final TextField texttest  = new TextField("xxx ", "", NUM_SIZE, TextField.UNEDITABLE); // "v="   
-// here for the 3 strings to support lcs
-   
-    private final TextField lcs_in1 = new TextField("lcsIN1", "", NUM_SIZE, TextField.ANY);		//  
-    private final TextField lcs_in2 = new TextField("lcsIN2", "", NUM_SIZE, TextField.ANY);		//  
-    private final TextField lcs_out = new TextField("lcsOUT", "", NUM_SIZE, TextField.UNEDITABLE);	//   
-    
+    // here for the 3 strings to support lcs
+
+    private final TextField lcs_in1 = new TextField("lcsIN1", "change this text", NUM_SIZE, TextField.ANY);		//  
+    private final TextField lcs_in2 = new TextField("lcsIN2", "change this too", NUM_SIZE, TextField.ANY);		//  
+    private final TextField lcs_out = new TextField("lcsOUT", "here for the lcs", NUM_SIZE, TextField.UNEDITABLE);	//   
+
     /** A choice group with ava1ailable operations. */
     private final ChoiceGroup cg =
         new ChoiceGroup("", ChoiceGroup.POPUP,
@@ -105,35 +103,34 @@ public final class CalculatorMIDlet extends MIDlet implements CommandListener {
 
     /** Indicates if the application is initialized. */
     private boolean isInitialized = false;
-//            private Date date ;
-            
- //       long aboutNow = date.getTime();
- //       Calendar calendar = Calendar.getInstance();  // removed due to error on device
- //       double DOM = calendar.get(Calendar.DAY_OF_MONTH);
+    //            private Date date ;
+
+    //       long aboutNow = date.getTime();
+    //       Calendar calendar = Calendar.getInstance();  // removed due to error on device
+    //       double DOM = calendar.get(Calendar.DAY_OF_MONTH);
     /**
      * Creates the calculator view and action buttons.
      */
-	private Vector vec1 = new Vector();
+    private Vector vec1 = new Vector();
     protected void startApp() {
         if (isInitialized) {
             return;
         }
- //       long aboutNow = date.getTime();
-//        Calendar calendar = Calendar.getInstance();
-//        double DOM = calendar.get(Calendar.DAY_OF_MONTH);
+        //       long aboutNow = date.getTime();
+        //        Calendar calendar = Calendar.getInstance();
+        //        double DOM = calendar.get(Calendar.DAY_OF_MONTH);
 
-//		int DOM = calendar.get(Calendar.DAY_OF_MONTH);
-// in this library appear not to be able to do DAY_OF_WEEK_IN_MONTH but maybe 
-//		if   ( (calendar.get(Calendar.DAY_OF_MONTH)==4) && (calendar.get(Calendar.DAY_OF_WEEK)==2) ){}
-//	         DateField datefield = new DateField("", DateField.DATE.TIME); 
+        //		int DOM = calendar.get(Calendar.DAY_OF_MONTH);
+        // in this library appear not to be able to do DAY_OF_WEEK_IN_MONTH but maybe 
+        //		if   ( (calendar.get(Calendar.DAY_OF_MONTH)==4) && (calendar.get(Calendar.DAY_OF_WEEK)==2) ){}
+        //	         DateField datefield = new DateField("", DateField.DATE.TIME); 
         Form f = new Form("Kinematics 3");
 
-		f.append(lcs_in1);
-	
-		f.append(lcs_in2);
-			
-  		f.append(lcs_out);  // enabling this causes fail with message 'Invalid Application - delete?' 
+        f.append(lcs_in1);
 
+        f.append(lcs_in2);
+
+        f.append(lcs_out);  // enabling this causes fail with message 'Invalid Application - delete?' 
 
         f.append(t1); // time
         f.append(cg); 
@@ -145,21 +142,21 @@ public final class CalculatorMIDlet extends MIDlet implements CommandListener {
         f.append(texttest);	  // need to append text fields for lcs here
         f.addCommand(exitCmd);
         f.addCommand(calcCmd);
-        
-// 1          display = Display.getDisplay(this);
 
- //   datefield.setDate(today);
- // 1   form.append(datefield);
- // 1   form.addCommand(exit);
- // 1   form.setCommandListener(this);
-    
+        // 1          display = Display.getDisplay(this);
+
+        //   datefield.setDate(today);
+        // 1   form.append(datefield);
+        // 1   form.addCommand(exit);
+        // 1   form.setCommandListener(this);
+
         f.append(new DateField("Date1", DateField.DATE));  // 07.02.2017
-  // 1          date2.setDate(today);
-//        f.append(datefield);  // f.append(new DateField("Date2", DateField.DATE)); //
+        // 1          date2.setDate(today);
+        //        f.append(datefield);  // f.append(new DateField("Date2", DateField.DATE)); //
         // to retrieve date values - maybe assign 
         // DateField date = 
- //           Date currentTime = datefield.getDate();
-         String	lcs = LongestCommonSubsequence.lcs("tania", "tonight");
+        //           Date currentTime = datefield.getDate();
+        String	lcs = LongestCommonSubsequence.lcs("tania", "tonight");
         f.setCommandListener(this);
         Display.getDisplay(this).setCurrent(f);
         alert.addCommand(new Command("Back", Command.SCREEN, 1));
@@ -226,9 +223,9 @@ public final class CalculatorMIDlet extends MIDlet implements CommandListener {
                 vs = Math.sqrt((n2*n2)+(2*n3*res));  // v2 = u2 + 2as :
                 // vs = Math.sqrt(2.5); 
                 svs = Double.toString(vs);
-      //           svs += Double.toString(DOM);
-      String lcs = LongestCommonSubsequence.lcs("tania", "tonight");
-             lcs = LongestCommonSubsequence.lcs(lcs_in1.getString(), lcs_in2.getString());   // s= lcs_in1.getString();
+                //           svs += Double.toString(DOM);
+                String lcs = LongestCommonSubsequence.lcs("tania", "tonight");
+                lcs = LongestCommonSubsequence.lcs(lcs_in1.getString(), lcs_in2.getString());   // s= lcs_in1.getString();
                 texttest.setString(svs);
                 lcs_out.setString(lcs);
                 break;
@@ -283,17 +280,15 @@ public final class CalculatorMIDlet extends MIDlet implements CommandListener {
 
         return n;
     }
-    
-      public static double calculations(double n1,double n2,double n3) {
-		  double res;
-	    res = n2*n1 + ((n1*n1)*n3)/2; // was n1/n2  // n1 / n2; // res = u*t + ((t*t)*a)/2  //
-                //  cpp s = u * t + ((t * t) * a) / 2;
-                //double
-                return res;
-	 }
-    
+
+    public static double calculations(double n1,double n2,double n3) {
+        double res;
+        res = n2*n1 + ((n1*n1)*n3)/2; // was n1/n2  // n1 / n2; // res = u*t + ((t*t)*a)/2  //
+        //  cpp s = u * t + ((t * t) * a) / 2;
+        //double
+        return res;
+    }
+
 } // end of class 'CalculatorMIDlet' definition
 
- 
 
-	 
