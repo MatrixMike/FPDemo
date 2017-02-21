@@ -8,4 +8,6 @@ why does third append for lcs cause failure
 does java.util.Date have bad effect - 
 are we stretching a bit to use Java 1.8 even though -source 1.3 used on invocation line
 
+some errors seem wierd - are they to do with the CLDC version? somewhere I recall seeing that between CLDC 1.0 and 1.1 some sensitivity to strings and integers was created - 
+Tue 21 Feb 2017 13:58:42 AEDT 
 

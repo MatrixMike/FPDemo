@@ -6,6 +6,7 @@ package calculator;
 // import java.util.*;  // using this causes 'invalid application' error on the device
 // import java.lang.*;  // removed due to error on phone screen
 import java.util.Date;
+import java.util.Vector;
 import javax.microedition.lcdui.*;
 import javax.microedition.midlet.MIDlet;
 
@@ -90,8 +91,8 @@ public final class CalculatorMIDlet extends MIDlet implements CommandListener {
     private final TextField texttest  = new TextField("xxx ", "", NUM_SIZE, TextField.UNEDITABLE); // "v="   
 // here for the 3 strings to support lcs
    
-    private final TextField lcs_in1 = new TextField("lcsIN1", "", NUM_SIZE, TextField.DECIMAL);		//  
-    private final TextField lcs_in2 = new TextField("lcsIN2", "", NUM_SIZE, TextField.DECIMAL);		//  
+    private final TextField lcs_in1 = new TextField("lcsIN1", "", NUM_SIZE, TextField.ANY);		//  
+    private final TextField lcs_in2 = new TextField("lcsIN2", "", NUM_SIZE, TextField.ANY);		//  
     private final TextField lcs_out = new TextField("lcsOUT", "", NUM_SIZE, TextField.UNEDITABLE);	//   
     
     /** A choice group with ava1ailable operations. */
@@ -112,7 +113,7 @@ public final class CalculatorMIDlet extends MIDlet implements CommandListener {
     /**
      * Creates the calculator view and action buttons.
      */
-
+	private Vector vec1 = new Vector();
     protected void startApp() {
         if (isInitialized) {
             return;
