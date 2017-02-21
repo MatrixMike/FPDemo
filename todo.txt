@@ -13,3 +13,13 @@ Tue 21 Feb 2017 13:58:42 AEDT
 
 add an icon 
 
+add documentation such that javadocs will read and generate usable info
+
+separate the lcs class into another file
+
+investigate the package stmt
+
+add some tests - junit? - a side idea was to work with pythagorean triplets
+
+sign the MIDlet - needs some understanding of security
+

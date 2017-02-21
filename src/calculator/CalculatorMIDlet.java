@@ -9,6 +9,7 @@ import java.util.Date;
 import java.util.Vector;
 import javax.microedition.lcdui.*;
 import javax.microedition.midlet.MIDlet;
+import calculator.LongestCommonSubsequence;
 
 // import java.util.List;
 
@@ -30,7 +31,7 @@ x = new StringBuffer().append("a").append(4).append("c")
 .toString()
  */
 
-class LongestCommonSubsequence {
+/*class LongestCommonSubsequence {
     // Compute length of LCS for all subproblems.
     public static String lcs(String x, String y) {
         int m = x.length(), n = y.length();
@@ -61,6 +62,7 @@ class LongestCommonSubsequence {
         return lcs;
     }
 }
+*/
 
 public final class CalculatorMIDlet extends MIDlet implements CommandListener {
     private Date today = new Date(System.currentTimeMillis());
@@ -92,7 +94,7 @@ public final class CalculatorMIDlet extends MIDlet implements CommandListener {
     private final TextField lcs_in1 = new TextField("lcsIN1", "change this text", NUM_SIZE, TextField.ANY);		//  
     private final TextField lcs_in2 = new TextField("lcsIN2", "change this too", NUM_SIZE, TextField.ANY);		//  
     private final TextField lcs_out = new TextField("lcsOUT", "here for the lcs", NUM_SIZE, TextField.UNEDITABLE);	//   
-
+// private List <String> list = new ArrayList<>(Arrays.asList("alpha","bravo","charlie"));  // diamond op from version 7
     /** A choice group with ava1ailable operations. */
     private final ChoiceGroup cg =
         new ChoiceGroup("", ChoiceGroup.POPUP,
