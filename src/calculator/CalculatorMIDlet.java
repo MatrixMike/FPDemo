@@ -90,9 +90,9 @@ public final class CalculatorMIDlet extends MIDlet implements CommandListener {
     private final TextField texttest  = new TextField("xxx ", "", NUM_SIZE, TextField.UNEDITABLE); // "v="   
 // here for the 3 strings to support lcs
    
-    private final TextField lcs_in1 = new TextField("lcsIN1", "", NUM_SIZE, TextField.DECIMAL);//  
-    private final TextField lcs_in2 = new TextField("lcsIN2", "", NUM_SIZE, TextField.DECIMAL);//  
-    private final TextField lcs_out  = new TextField("lcsOUT", "", NUM_SIZE, TextField.UNEDITABLE); // "v="    
+    private final TextField lcs_in1 = new TextField("lcsIN1", "", NUM_SIZE, TextField.DECIMAL);		//  
+    private final TextField lcs_in2 = new TextField("lcsIN2", "", NUM_SIZE, TextField.DECIMAL);		//  
+    private final TextField lcs_out = new TextField("lcsOUT", "", NUM_SIZE, TextField.UNEDITABLE);	//   
     
     /** A choice group with ava1ailable operations. */
     private final ChoiceGroup cg =
@@ -127,6 +127,13 @@ public final class CalculatorMIDlet extends MIDlet implements CommandListener {
 //	         DateField datefield = new DateField("", DateField.DATE.TIME); 
         Form f = new Form("Kinematics 2");
 
+		f.append(lcs_in1);
+	
+		f.append(lcs_in2);
+			
+  		f.append(lcs_out);  // enabling this causes fail with message 'Invalid Application - delete?' 
+
+
         f.append(t1); // time
         f.append(cg); 
         f.append(t2); // init velocity
@@ -134,7 +141,7 @@ public final class CalculatorMIDlet extends MIDlet implements CommandListener {
         f.append(tr); // displacement
         f.append(v);  // velocity at time t
         f.append(sysprop);
-        f.append(texttest);
+        f.append(texttest);	  // need to append text fields for lcs here
         f.addCommand(exitCmd);
         f.addCommand(calcCmd);
         
