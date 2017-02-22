@@ -1,0 +1,60 @@
+Project settings saved
+Building "FPDemo"
+warning: [options] source value 1.3 is obsolete and will be removed in a future release
+warning: [options] target value 1.3 is obsolete and will be removed in a future release
+warning: [options] To suppress warnings about obsolete options, use -Xlint:-options.
+3 warnings
+ProGuard, version 5.3.2
+Reading program jar [/home/mikeh/j2mewtk/2.5.2/apps/FPDemo/bin/FPDemo.jar]
+Reading library jar [/usr/local/lib/mmapi.jar]
+Reading library jar [/usr/local/lib/midpapi20.jar]
+Note: duplicate definition of library class [javax.microedition.media.control.ToneControl]
+Note: duplicate definition of library class [javax.microedition.media.control.VolumeControl]
+Note: duplicate definition of library class [javax.microedition.media.Control]
+Note: duplicate definition of library class [javax.microedition.media.Controllable]
+Note: duplicate definition of library class [javax.microedition.media.Manager]
+Note: duplicate definition of library class [javax.microedition.media.MediaException]
+Note: duplicate definition of library class [javax.microedition.media.Player]
+Note: duplicate definition of library class [javax.microedition.media.PlayerListener]
+Note: duplicate definition of library class [javax.microedition.media.protocol.DataSource]
+Note: duplicate definition of library class [javax.microedition.media.SystemTimeBase]
+Reading library jar [/usr/local/lib/wma11.jar]
+Reading library jar [/usr/local/lib/cldcapi11.jar]
+Preparing output jar [/tmp/FPDemo.jar]
+  Copying resources from program jar [/home/mikeh/j2mewtk/2.5.2/apps/FPDemo/bin/FPDemo.jar]
+Note: there were 10 duplicate class definitions.
+      (http://proguard.sourceforge.net/manual/troubleshooting.html#duplicateclass)
+Wrote /home/mikeh/j2mewtk/2.5.2/apps/FPDemo/bin/FPDemo.jar
+Wrote /home/mikeh/j2mewtk/2.5.2/apps/FPDemo/bin/FPDemo.jad
+Build complete
+Warning: java.io.IOException: Permission denied
+Deleted the current project's class files.
+Project settings saved
+Building "FPDemo"
+warning: [options] source value 1.3 is obsolete and will be removed in a future release
+warning: [options] target value 1.3 is obsolete and will be removed in a future release
+warning: [options] To suppress warnings about obsolete options, use -Xlint:-options.
+3 warnings
+ProGuard, version 5.3.2
+Reading program jar [/home/mikeh/j2mewtk/2.5.2/apps/FPDemo/bin/FPDemo.jar]
+Reading library jar [/usr/local/lib/mmapi.jar]
+Reading library jar [/usr/local/lib/midpapi20.jar]
+Note: duplicate definition of library class [javax.microedition.media.control.ToneControl]
+Note: duplicate definition of library class [javax.microedition.media.control.VolumeControl]
+Note: duplicate definition of library class [javax.microedition.media.Control]
+Note: duplicate definition of library class [javax.microedition.media.Controllable]
+Note: duplicate definition of library class [javax.microedition.media.Manager]
+Note: duplicate definition of library class [javax.microedition.media.MediaException]
+Note: duplicate definition of library class [javax.microedition.media.Player]
+Note: duplicate definition of library class [javax.microedition.media.PlayerListener]
+Note: duplicate definition of library class [javax.microedition.media.protocol.DataSource]
+Note: duplicate definition of library class [javax.microedition.media.SystemTimeBase]
+Reading library jar [/usr/local/lib/wma11.jar]
+Reading library jar [/usr/local/lib/cldcapi11.jar]
+Preparing output jar [/tmp/FPDemo.jar]
+  Copying resources from program jar [/home/mikeh/j2mewtk/2.5.2/apps/FPDemo/bin/FPDemo.jar]
+Note: there were 10 duplicate class definitions.
+      (http://proguard.sourceforge.net/manual/troubleshooting.html#duplicateclass)
+Wrote /home/mikeh/j2mewtk/2.5.2/apps/FPDemo/bin/FPDemo.jar
+Wrote /home/mikeh/j2mewtk/2.5.2/apps/FPDemo/bin/FPDemo.jad
+Build complete
