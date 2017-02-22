@@ -9,7 +9,7 @@ import java.util.Date;
 import java.util.Vector;
 import javax.microedition.lcdui.*;
 import javax.microedition.midlet.MIDlet;
-import calculator.LongestCommonSubsequence;
+// import calculator.LongestCommonSubsequence;   // not necessary 
 
 // import java.util.List;
 
@@ -127,13 +127,9 @@ public final class CalculatorMIDlet extends MIDlet implements CommandListener {
         //		if   ( (calendar.get(Calendar.DAY_OF_MONTH)==4) && (calendar.get(Calendar.DAY_OF_WEEK)==2) ){}
         //	         DateField datefield = new DateField("", DateField.DATE.TIME); 
         Form f = new Form("Kinematics 3");
-
         f.append(lcs_in1);
-
         f.append(lcs_in2);
-
         f.append(lcs_out);  // enabling this causes fail with message 'Invalid Application - delete?' 
-
         f.append(t1); // time
         f.append(cg); 
         f.append(t2); // init velocity
@@ -144,7 +140,6 @@ public final class CalculatorMIDlet extends MIDlet implements CommandListener {
         f.append(texttest);	  // need to append text fields for lcs here
         f.addCommand(exitCmd);
         f.addCommand(calcCmd);
-
         // 1          display = Display.getDisplay(this);
 
         //   datefield.setDate(today);
@@ -230,6 +225,7 @@ public final class CalculatorMIDlet extends MIDlet implements CommandListener {
                 lcs = LongestCommonSubsequence.lcs(lcs_in1.getString(), lcs_in2.getString());   // s= lcs_in1.getString();
                 texttest.setString(svs);
                 lcs_out.setString(lcs);
+                int p = pythagoreantriplet.geta();
                 break;
                 default:
             }
