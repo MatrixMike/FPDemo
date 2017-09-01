@@ -3,6 +3,7 @@
  *
  */
 package calculator;
+// added pythagoreantriplets to FPDemo 23.02.2017
 // import java.util.*;  // using this causes 'invalid application' error on the device
 // import java.lang.*;  // removed due to error on phone screen
 import java.util.Date;

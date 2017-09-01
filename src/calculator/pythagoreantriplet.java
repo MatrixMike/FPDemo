@@ -4,6 +4,7 @@
  * Copyright 2017 Mike Hewitt <mikeh@mikeh-Inspiron-1501>
 */
 package calculator;
+// added to FPDemo 23.02.2017
 public class pythagoreantriplet
 {
     // instance variables - replace the example below with your own

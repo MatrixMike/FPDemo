@@ -25,3 +25,7 @@ sign the MIDlet - needs some understanding of security
 Wed 22 Feb 2017 08:48:22 AEDT 
 looks like I have separated the lcs class into another file: stackoverflow used but the answer was not 100%; the class to be separated needs to have the phrase package <>; and it seems the compiler will pick it up {must scan many .java files for this?!}
 
+Thu 23 Feb 2017 08:11:04 AEDT 
+added pythagorean triplet with help from geany : add package <> ; to file and use partial typing of class and auto complete - 
+ - which completes the class name and displays the available methods
+
