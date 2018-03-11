@@ -1,0 +1,9 @@
+Version 2.5.2 for CLDC (02/10/2007 1:47 PM)
+Java vendor: Oracle Corporation
+Java version: 1.8.0_161
+Operating system: Linux
+Operating system version: 3.19.0-32-generic
+Architecture: amd64
+Language: en
+Installation directory: /home/mikeh/
+
