@@ -1,6 +1,6 @@
 /*
  *
- *
+ * 12.03.2018 04:46:31  for reference : date of upload to github
  */
 package calculator;
 // added pythagoreantriplets to FPDemo 23.02.2017
@@ -10,7 +10,7 @@ import java.util.Date;
 import java.util.Vector;
 import javax.microedition.lcdui.*;
 import javax.microedition.midlet.MIDlet;
-// import calculator.LongestCommonSubsequence;   // not necessary 
+// import calculator.LongestCommonSubsequence;   // not necessary
 
 // import java.util.List;
 
@@ -86,15 +86,15 @@ public final class CalculatorMIDlet extends MIDlet implements CommandListener {
     private final TextField t3 = new TextField(null, "", NUM_SIZE, TextField.DECIMAL);// "a acceleration"
     private final TextField t4 = new TextField(null, "", NUM_SIZE, TextField.DECIMAL);// "v velocity at time t"
     /** A text field to keep the result of calculation. */
-    private final TextField tr = new TextField("displacement s ", "", NUM_SIZE, TextField.UNEDITABLE); // "s=" 
-    private final TextField v  = new TextField("velocity at time t ", "", NUM_SIZE, TextField.UNEDITABLE); // "v=" 
-    private final TextField sysprop  = new TextField(System.getProperty("microedition.configuration"), "", NUM_SIZE, TextField.UNEDITABLE); // "v="   
-    private final TextField texttest  = new TextField("xxx ", "", NUM_SIZE, TextField.UNEDITABLE); // "v="   
+    private final TextField tr = new TextField("displacement s ", "", NUM_SIZE, TextField.UNEDITABLE); // "s="
+    private final TextField v  = new TextField("velocity at time t ", "", NUM_SIZE, TextField.UNEDITABLE); // "v="
+    private final TextField sysprop  = new TextField(System.getProperty("microedition.configuration"), "", NUM_SIZE, TextField.UNEDITABLE); // "v="
+    private final TextField texttest  = new TextField("xxx ", "", NUM_SIZE, TextField.UNEDITABLE); // "v="
     // here for the 3 strings to support lcs
 
-    private final TextField lcs_in1 = new TextField("lcsIN1", "change this text", NUM_SIZE, TextField.ANY);		//  
-    private final TextField lcs_in2 = new TextField("lcsIN2", "change this too", NUM_SIZE, TextField.ANY);		//  
-    private final TextField lcs_out = new TextField("lcsOUT", "here for the lcs", NUM_SIZE, TextField.UNEDITABLE);	//   
+    private final TextField lcs_in1 = new TextField("lcsIN1", "change this text", NUM_SIZE, TextField.ANY);		//
+    private final TextField lcs_in2 = new TextField("lcsIN2", "change this too", NUM_SIZE, TextField.ANY);		//
+    private final TextField lcs_out = new TextField("lcsOUT", "here for the lcs", NUM_SIZE, TextField.UNEDITABLE);	//
 // private List <String> list = new ArrayList<>(Arrays.asList("alpha","bravo","charlie"));  // diamond op from version 7
     /** A choice group with ava1ailable operations. */
     private final ChoiceGroup cg =
@@ -124,15 +124,15 @@ public final class CalculatorMIDlet extends MIDlet implements CommandListener {
         //        double DOM = calendar.get(Calendar.DAY_OF_MONTH);
 
         //		int DOM = calendar.get(Calendar.DAY_OF_MONTH);
-        // in this library appear not to be able to do DAY_OF_WEEK_IN_MONTH but maybe 
+        // in this library appear not to be able to do DAY_OF_WEEK_IN_MONTH but maybe
         //		if   ( (calendar.get(Calendar.DAY_OF_MONTH)==4) && (calendar.get(Calendar.DAY_OF_WEEK)==2) ){}
-        //	         DateField datefield = new DateField("", DateField.DATE.TIME); 
+        //	         DateField datefield = new DateField("", DateField.DATE.TIME);
         Form f = new Form("Kinematics 3");
         f.append(lcs_in1);
         f.append(lcs_in2);
-        f.append(lcs_out);  // enabling this causes fail with message 'Invalid Application - delete?' 
+        f.append(lcs_out);  // enabling this causes fail with message 'Invalid Application - delete?'
         f.append(t1); // time
-        f.append(cg); 
+        f.append(cg);
         f.append(t2); // init velocity
         f.append(t3); // acceleration
         f.append(tr); // displacement
@@ -151,8 +151,8 @@ public final class CalculatorMIDlet extends MIDlet implements CommandListener {
         f.append(new DateField("Date1", DateField.DATE));  // 07.02.2017
         // 1          date2.setDate(today);
         //        f.append(datefield);  // f.append(new DateField("Date2", DateField.DATE)); //
-        // to retrieve date values - maybe assign 
-        // DateField date = 
+        // to retrieve date values - maybe assign
+        // DateField date =
         //           Date currentTime = datefield.getDate();
         String	lcs = LongestCommonSubsequence.lcs("tania", "tonight");
         f.setCommandListener(this);
@@ -219,7 +219,7 @@ public final class CalculatorMIDlet extends MIDlet implements CommandListener {
                 //  cpp s = u * t + ((t * t) * a) / 2;
                 //double
                 vs = Math.sqrt((n2*n2)+(2*n3*res));  // v2 = u2 + 2as :
-                // vs = Math.sqrt(2.5); 
+                // vs = Math.sqrt(2.5);
                 svs = Double.toString(vs);
                 //           svs += Double.toString(DOM);
                 String lcs = LongestCommonSubsequence.lcs("tania", "tonight");
