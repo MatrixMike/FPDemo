@@ -29,3 +29,6 @@ Thu 23 Feb 2017 08:11:04 AEDT
 added pythagorean triplet with help from geany : add package <> ; to file and use partial typing of class and auto complete - 
  - which completes the class name and displays the available methods
 
+Mon 12 Mar 2018 04:07:48 AEDT 
+after recent re-discovery of how to push local repo to github, checking local source
+
