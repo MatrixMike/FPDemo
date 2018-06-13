@@ -1,7 +1,8 @@
 /*
  * pythagoreantriplet.java
- * 
+ *
  * Copyright 2017 Mike Hewitt <mikeh@mikeh-Inspiron-1501>
+ *
 */
 package calculator;
 // added to FPDemo 23.02.2017
@@ -25,11 +26,11 @@ public class pythagoreantriplet
     }
 
     /**
-     * Set shortest side of triangle, a 
+     * Set shortest side of triangle, a
      *
      * @param a the shortest side of the triangle
      */
-    public static void seta(int len) {  // was void and compiled 
+    public static void seta(int len) {  // was void and compiled
         a= len;
     }
 
@@ -93,7 +94,7 @@ public class pythagoreantriplet
 
     /**
      * produces b when a is known to be odd
-     * @return b 
+     * @return b
      */
     public static int oddb() {
         b = ((a * a) - 1) / 2;
