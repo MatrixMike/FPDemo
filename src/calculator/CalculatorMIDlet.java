@@ -93,7 +93,7 @@ public final class CalculatorMIDlet extends MIDlet implements CommandListener {
     private final TextField texttest  = new TextField("xxx ", "", NUM_SIZE, TextField.UNEDITABLE); // "v="
     // here for the 3 strings to support lcs
 
-    private final TextField lcs_in1 = new TextField("lcsIN1", "change this text", NUM_SIZE, TextField.ANY);		//
+    private final TextField lcs_in1 = new TextField("demo1", "proof of mod", NUM_SIZE, TextField.ANY);   private final TextField lcs_in1 = new TextField("lcsIN1", "change this text", NUM_SIZE, TextField.ANY);		//
     private final TextField lcs_in2 = new TextField("lcsIN2", "change this too", NUM_SIZE, TextField.ANY);		//
     private final TextField lcs_out = new TextField("lcsOUT", "here for the lcs", NUM_SIZE, TextField.UNEDITABLE);	//
 // private List <String> list = new ArrayList<>(Arrays.asList("alpha","bravo","charlie"));  // diamond op from version 7
